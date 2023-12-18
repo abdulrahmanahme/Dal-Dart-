@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_assignment/config/app_colors.dart';
-import '../../config/app_text_styles.dart';
+import '../config/app_text_styles.dart';
 
 class PostItem extends StatelessWidget {
   const PostItem({super.key, required this.title, required this.body});

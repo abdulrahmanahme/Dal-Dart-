@@ -10,6 +10,9 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_animate: ^4.3.0
+  dio: ^5.4.0
+  flutter_bloc: ^8.1.3
+
 
 
 

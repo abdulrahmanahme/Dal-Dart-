@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_assignment/config/app_strings.dart';
 import 'package:flutter_assignment/config/app_text_styles.dart';
-import '../core/widgets/post_item.dart';
+import '../widget/hot_posts.dart';
+import '../widget/new_post.dart';
+import '../widget/rising_posts.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -33,38 +35,11 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
-        body: TabBarView(
+        body: const TabBarView(
           children: [
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: 15,
-              itemBuilder: (BuildContext context, int index) {
-                return PostItem(
-                  title: "${AppStrings.postTittle}$index",
-                  body: AppStrings.bodyPost,
-                );
-              },
-            ),
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: 15,
-              itemBuilder: (BuildContext context, int index) {
-                 return PostItem(
-                  title: "${AppStrings.postTittle}$index",
-                  body: AppStrings.bodyPost,
-                );
-              },
-            ),
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: 15,
-              itemBuilder: (BuildContext context, int index) {
-                 return PostItem(
-                  title: "${AppStrings.postTittle}$index",
-                  body: AppStrings.bodyPost,
-                );
-              },
-            ),
+            HotPosts(),
+            NewPosts(),
+            RisingPosts(),
           ],
         ),
       ),
