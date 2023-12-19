@@ -5,7 +5,9 @@ import 'package:http/http.dart';
 import 'core/bloc_observer/bloc_observer.dart';
 import 'view/home_page.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await ApiRepository(Client()).getToken();
   Bloc.observer = MyBlocObserver();
 
   runApp(const MyApp());

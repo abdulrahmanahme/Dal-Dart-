@@ -16,7 +16,7 @@ class HotPosts extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => PostViewModel(
-          postRepository: PostRepository(postsApi: PostsApi(Client())))
+          postRepository: PostRepository(postsApi: ApiRepository(Client())))
         ..loadHot()
         ..scrollcontrollerListHotPosts(),
       child: BlocConsumer<PostViewModel, PostViewModelState>(

@@ -16,7 +16,7 @@ class RisingPosts extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          PostViewModel(postRepository: PostRepository(postsApi: PostsApi(Client())))
+          PostViewModel(postRepository: PostRepository(postsApi: ApiRepository(Client())))
             ..loadRising()
             ..scrollcontrollerListRisingPosts(),
       child: BlocConsumer<PostViewModel, PostViewModelState>(
