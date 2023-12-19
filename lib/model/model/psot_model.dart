@@ -1,10 +1,3 @@
-// To parse this JSON data, do
-//
-//     final post = postFromJson(jsonString);
-
-import 'dart:convert';
-
-Post postFromJson(String str) => Post.fromJson(json.decode(str));
 
 class PostModel {
   PostData data;
@@ -58,4 +51,3 @@ class Post {
         title: json["title"],
       );
 }
-

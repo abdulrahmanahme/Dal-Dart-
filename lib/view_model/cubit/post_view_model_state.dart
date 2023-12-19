@@ -4,7 +4,7 @@ part of 'post_view_model_cubit.dart';
 class PostViewModelState {}
 
 class PostViewModelInitial extends PostViewModelState {}
-///// Post States
+/////Hot Post States
 
 class PostHotLoadingState extends PostViewModelState {}
 
@@ -28,4 +28,3 @@ class PostRisingErrorState extends PostViewModelState {}
 ///////
 class IsLoadingMoreDataRunningState extends PostViewModelState {}
 
-class HasNextPageState extends PostViewModelState {}

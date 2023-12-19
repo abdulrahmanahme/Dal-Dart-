@@ -1,7 +1,9 @@
+
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_assignment/core/end_points/end_points.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter_assignment/model/Api/post_api.dart';
+import 'package:http/http.dart';
 import '../../model/model/psot_model.dart';
 import '../../model/repository/post_repository.dart';
 part 'post_view_model_state.dart';
@@ -26,7 +28,7 @@ class PostViewModel extends Cubit<PostViewModelState> {
       emit(PostHotErrorState());
     });
   }
-
+ 
   void loadNew() {
     emit(PostNewLoadingState());
     postRepository
@@ -121,4 +123,5 @@ class PostViewModel extends Cubit<PostViewModelState> {
       emit(IsLoadingMoreDataRunningState());
     }
   }
+
 }

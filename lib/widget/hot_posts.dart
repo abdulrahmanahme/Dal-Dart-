@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:http/http.dart';
 import 'post_item.dart';
 import '../model/Api/post_api.dart';
 import '../model/repository/post_repository.dart';
@@ -14,7 +15,7 @@ class HotPosts extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          PostViewModel(postRepository: PostRepository(postsApi: PostsApi()))
+          PostViewModel(postRepository: PostRepository(postsApi: PostsApi(Client())))
             ..loadHot()..scrollcontrollerListHotPosts(),
       child: BlocConsumer<PostViewModel, PostViewModelState>(
         listener: (context, state) {},
@@ -48,3 +49,4 @@ class HotPosts extends StatelessWidget {
     );
   }
 }
+
