@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_assignment/model/Api/post_api.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:http/http.dart';
+import 'core/bloc_observer/bloc_observer.dart';
+import 'view/home_page.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await ApiRepository(Client()).getToken();
+  Bloc.observer = MyBlocObserver();
+
   runApp(const MyApp());
 }
 
@@ -11,26 +20,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Lepaya Assignment',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Lepaya Assignment'),
-        ),
-        body: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            children: const [
-              Text('Hey there! Welcome to the Lepaya Flutter assignment.'),
-              SizedBox(height: 16),
-              Text(
-                'Check the `readme` of this repository for the instructions.',
-              ),
-            ],
-          ),
-        ),
-      ),
+      home: const HomePage(),
     );
   }
 }
